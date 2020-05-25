@@ -1,0 +1,42 @@
+body {
+  background-image: url("/images/back.jpg");
+}
+.form {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid grey;
+  border-radius: 20px;
+  background-color: lightgrey;
+}
+.inp {
+  margin: 5px;
+}
+.cont {
+  width: 96%;
+  border: 2px solid grey;
+  border-radius: 10px;
+  background-color: lightgrey;
+  margin: 1%;
+  padding: 10px;
+}
+.time-field {
+  width: 100%;
+  height: 40px;
+  margin: 2px;
+  padding: 2px;
+}
+.not-reserved {
+  background-color: rgb(188, 211, 154);
+  cursor: pointer;
+}
+.reserved {
+  background-color: rgb(211, 159, 154);
+}
+table {
+  width: 50%;
+}
+table, th, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
