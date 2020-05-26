@@ -13,7 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <title>Profile</title>
 </head>
 <body>
@@ -41,19 +41,27 @@
             <tr>
               <td>ID</td>
               <td>Username</td>
+              <td>Actions</td>
             </tr>";
-    $sql = "SELECT id, username FROM user;";
+    $sql = "SELECT id, username, type FROM user;";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        
-        // echo "id: " . $row["id"] . ", username: " . $row["username"] . "<br>";
         echo "<tr>
                 <td>". $row["id"] . "</td>
-                <td>". $row["username"] . "</td>
-              </tr>";
-        
+                <td>". $row["username"] . "</td>";
+        echo "<td>";
+        if($row["username"] != 'admin'){
+          if($row["type"] == 'guest') {
+            echo "<a href='/user.php?action=update&type=admin&id=". $row["id"] ."' class='btn btn-success btn-sm'>Set admin</a>";
+          } elseif ($row["type"] == 'admin') {
+            echo "<a href='/user.php?action=update&type=guest&id=". $row["id"] ."' class='btn btn-warning btn-sm'>Set guest</a>";
+          } 
+          echo "<a href='/user.php?action=delete&id=". $row["id"] ."' class='btn btn-danger btn-sm'>Delete</a>";
+        }
+        echo "</td>";
+        echo  "</tr>";
       }
     }
     echo "</table>";
