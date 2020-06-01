@@ -10,7 +10,7 @@
   }
   $result = $conn->query($sql);
     if ($result === TRUE) {
-      header("location: /profile.php");
+      header("location: profile.php");
     } else {
       echo "Error updating record: " . $result->error;
     }
