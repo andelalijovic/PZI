@@ -1,7 +1,7 @@
 <?php 
   session_start();
   if(empty($_SESSION["id"])) {
-    header("location: /login.php");
+    header("location: login.php");
   }
   include "connection.php";
   $userid = $_SESSION["id"];
@@ -54,11 +54,11 @@
         echo "<td>";
         if($row["username"] != 'admin'){
           if($row["type"] == 'guest') {
-            echo "<a href='/user.php?action=update&type=admin&id=". $row["id"] ."' class='btn btn-success btn-sm'>Set admin</a>";
+            echo "<a href='user.php?action=update&type=admin&id=". $row["id"] ."' class='btn btn-success btn-sm'>Set admin</a>";
           } elseif ($row["type"] == 'admin') {
-            echo "<a href='/user.php?action=update&type=guest&id=". $row["id"] ."' class='btn btn-warning btn-sm'>Set guest</a>";
+            echo "<a href='user.php?action=update&type=guest&id=". $row["id"] ."' class='btn btn-warning btn-sm'>Set guest</a>";
           } 
-          echo "<a href='/user.php?action=delete&id=". $row["id"] ."' class='btn btn-danger btn-sm'>Delete</a>";
+          echo "<a href='user.php?action=delete&id=". $row["id"] ."' class='btn btn-danger btn-sm'>Delete</a>";
         }
         echo "</td>";
         echo  "</tr>";
