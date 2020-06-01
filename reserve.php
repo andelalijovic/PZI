@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(empty($_SESSION["id"])) {
-      header("location: /login.php");
+      header("location: login.php");
   }
   include "connection.php";
   $playgroundid = $_GET['id'];
