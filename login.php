@@ -43,7 +43,7 @@
                   $_SESSION['username'] = $row["username"];
                   $_SESSION['type'] = $row["type"];
                   $_SESSION['id'] = $row["id"];
-                  header("location: /");
+                  header("location: index.php");
                 } else {
                   echo "<center><p class='text-danger'>Wrong password<p></center>";
                 }
