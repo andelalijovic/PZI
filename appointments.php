@@ -40,7 +40,7 @@
       } else {
         echo "<div class='time-field not-reserved'>";
         echo "$i:00
-            <a href='/reserve.php?id=$id&user=$userid&time=$i' class='btn btn-sm btn-primary float-right'>Reserve</a>
+            <a href='reserve.php?id=$id&user=$userid&time=$i' class='btn btn-sm btn-primary float-right'>Reserve</a>
             </div>";
       }
     } 
