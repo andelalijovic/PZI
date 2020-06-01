@@ -28,7 +28,7 @@
                       <h5 class="card-title">' . $row["sport_name"] . '</h5>
                       <p class="card-text">Address: ' . $row["address"] . '.</p>';
           if(!empty($_SESSION["username"])) {
-            echo      '<a href="/appointments.php?id='. $row["id"] .'" class="btn btn-primary">Reserve appointment</a>';
+            echo      '<a href="appointments.php?id='. $row["id"] .'" class="btn btn-primary">Reserve appointment</a>';
           }
           echo      '</div>
                   </div>
